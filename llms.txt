@@ -25,4 +25,4 @@ Twinstech Solar (registered as Twinsteck Integrated Services) installs off-grid 
 ## Contact
 - WhatsApp: https://wa.me/2348051355133
 - Email: twinskenny@gmail.com
-- Website: https://twinstech-solar.example/contact.html
+- Website: https://twinstech-solar.vercel.app/contact.html

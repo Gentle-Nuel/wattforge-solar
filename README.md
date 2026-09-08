@@ -33,14 +33,10 @@ node .qa-serve.js   # serves on http://localhost:8946
 
 Then open the printed local URL — no dependencies to install.
 
-## Known pre-launch TODOs
-
-This build still carries a few markers from its internal review pass ("Study 03 / Verify") that need to be cleared before it's treated as the live production site:
-
-- [ ] `<meta name="robots" content="noindex,nofollow">` in `index.html` — remove once ready to be indexed.
-- [ ] Page `<title>` still reads "Study 03 'Verify' (test build)" — needs a real title.
-- [ ] Canonical/OG URLs point at a placeholder domain (`https://twinstech-solar.example/`) — update to the real domain once one is assigned.
-
 ## Deployment
 
-Linked to Vercel (`.vercel/` is git-ignored, per Vercel's own convention — do not commit it).
+Live at **https://twinstech-solar.vercel.app**. Linked to Vercel (`.vercel/` is git-ignored, per Vercel's own convention — do not commit it).
+
+Deploys are currently manual (`npx vercel --prod`) — the Vercel project isn't connected to this GitHub repo, so pushes to `main` do not auto-deploy.
+
+If a custom domain is assigned later, update `canonical`/`og:url`/`twitter:image` in every page's `<head>`, plus `robots.txt`, `sitemap.xml`, and `llms.txt` — they currently all point at the Vercel subdomain above.
