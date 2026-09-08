@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://twinstech-solar.example/sitemap.xml
-Crawl-delay: 1

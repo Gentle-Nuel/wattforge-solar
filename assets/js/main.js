@@ -1,7 +1,32 @@
 (function () {
   'use strict';
 
-  /* ===== Nav toggle (hamburger / off-canvas) ===== */
+  /* ===== Theme toggle =====
+     data-theme is already set on <html> by theme-init.js (blocking,
+     runs before paint). This just wires up the switch and persists
+     future choices. */
+  var themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    var logos = document.querySelectorAll('[data-logo]');
+
+    function reflect(theme) {
+      themeToggle.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+      logos.forEach(function (img) {
+        img.src = theme === 'light' ? 'assets/images/logo-mark-light.svg' : 'assets/images/logo-mark.svg';
+      });
+    }
+
+    reflect(document.documentElement.getAttribute('data-theme') || 'dark');
+
+    themeToggle.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('twinstech-theme', next); } catch (e) {}
+      reflect(next);
+    });
+  }
+
+  /* ===== Nav toggle ===== */
   var navToggle = document.getElementById('nav-toggle');
   var navMenu = document.getElementById('nav-menu');
 
@@ -10,7 +35,6 @@
       var isOpen = navMenu.classList.toggle('is-open');
       navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
-
     navMenu.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         navMenu.classList.remove('is-open');
@@ -19,18 +43,34 @@
     });
   }
 
-  /* ===== Breaker-panel accordion ===== */
-  document.querySelectorAll('.breaker-row').forEach(function (row) {
-    var head = row.querySelector('.breaker-row-head');
-    if (!head) return;
-    head.addEventListener('click', function () {
-      var isOpen = row.getAttribute('data-open') === 'true';
-      row.setAttribute('data-open', isOpen ? 'false' : 'true');
-      head.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-    });
-  });
+  /* ===== Switchboard: all services are always "on" — tapping a
+     switch selects which one's description shows in the shared
+     readout, it does not imply the others are off. ===== */
+  var switchGrid = document.getElementById('switch-grid');
+  if (switchGrid) {
+    var buttons = Array.prototype.slice.call(switchGrid.querySelectorAll('.switch-btn'));
+    var readoutLabel = document.getElementById('readout-label');
+    var readoutText = document.getElementById('readout-text');
 
-  /* ===== Load calculator (§7) ===== */
+    function select(btn) {
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+      btn.setAttribute('aria-pressed', 'true');
+      if (readoutLabel) readoutLabel.textContent = btn.getAttribute('data-label');
+      if (readoutText) readoutText.textContent = btn.getAttribute('data-desc');
+    }
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () { select(btn); });
+    });
+
+    if (buttons[0]) select(buttons[0]);
+  }
+
+  /* ===== Load calculator (contact.html) =====
+     Same tier logic as the brief: appliance steppers -> total kW ->
+     recommended system tier -> prefilled WhatsApp message. All four
+     tiers show indicative pricing here (guardrail on 3.5kVA/10kVA
+     pricing lifted for this build; see index.html pricing-note). */
   var calculator = document.getElementById('calculator');
   if (calculator) {
     var PHONE = calculator.getAttribute('data-phone') || '2348051355133';
@@ -44,19 +84,17 @@
       misc: 'Misc/sockets'
     };
 
-    var PRICING_NOTE = 'Pricing depends on site and components. Message us for an exact quote.';
-
     function getTier(totalKw) {
       if (totalKw <= 2) {
-        return { name: '3.5kVA Off-grid System', note: PRICING_NOTE };
+        return { name: '3.5kVA Off-grid System', note: 'Typical 3.5kVA setups run from ~₦4.2M installed. Final pricing depends on site and components.' };
       }
       if (totalKw <= 4) {
-        return { name: '6kVA Hybrid System', note: PRICING_NOTE };
+        return { name: '6kVA Hybrid System', note: 'Typical 6kVA setups run from ~₦6.35M installed. Final pricing depends on site and components.' };
       }
       if (totalKw <= 7) {
-        return { name: '10kVA Hybrid System', note: PRICING_NOTE };
+        return { name: '10kVA Hybrid System', note: 'Typical 10kVA setups run from ~₦10.8M installed. Final pricing depends on site and components.' };
       }
-      return { name: '15–30kVA Commercial System', note: PRICING_NOTE };
+      return { name: '15–30kVA Commercial System', note: 'Larger/commercial systems typically run from ₦17M–21M+ including logistics. Final pricing depends on site and components.' };
     }
 
     var rows = Array.prototype.slice.call(calculator.querySelectorAll('.calc-row[data-key]'));

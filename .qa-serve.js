@@ -19,7 +19,7 @@ const types = {
 };
 
 http.createServer((req, res) => {
-  let filePath = req.url === '/' ? '/study-03-verify/index.html' : req.url;
+  let filePath = req.url === '/' ? '/index.html' : req.url;
   filePath = path.join(dir, decodeURIComponent(filePath.split('?')[0]));
   fs.readFile(filePath, (err, data) => {
     if (err) { res.writeHead(404); res.end('not found: ' + filePath); return; }
