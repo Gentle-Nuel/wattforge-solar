@@ -1,6 +1,6 @@
-# Twinstech Solar — Website
+# Wattforge Solar — Website
 
-Static marketing site for Twinstech Solar (TWINSTECK INTEGRATED SERVICES), a Lagos-based solar, inverter, electrical, CCTV and satellite-TV installer operating nationwide. Plain HTML/CSS/JS, no build step, no framework.
+Static marketing site for Wattforge Solar (WATTFORGE ENERGY SYSTEMS), a Lagos-based solar, inverter, electrical, CCTV and satellite-TV installer operating nationwide. Plain HTML/CSS/JS, no build step, no framework.
 
 ## Structure
 
@@ -35,8 +35,4 @@ Then open the printed local URL — no dependencies to install.
 
 ## Deployment
 
-Live at **https://twinstech-solar.vercel.app**. Linked to Vercel (`.vercel/` is git-ignored, per Vercel's own convention — do not commit it).
-
-Deploys are currently manual (`npx vercel --prod`) — the Vercel project isn't connected to this GitHub repo, so pushes to `main` do not auto-deploy.
-
-If a custom domain is assigned later, update `canonical`/`og:url`/`twitter:image` in every page's `<head>`, plus `robots.txt`, `sitemap.xml`, and `llms.txt` — they currently all point at the Vercel subdomain above.
+Portfolio piece — previously built to pitch a real prospective client, rebranded as a fictional business (Wattforge Solar) after that pitch went unanswered. `https://wattforge-solar.vercel.app` is a placeholder domain baked into the meta tags; it isn't live yet. Deploy to a fresh Vercel project (`npx vercel --prod`) and then update `canonical`/`og:url`/`twitter:image` in every page's `<head>`, plus `robots.txt`, `sitemap.xml`, and `llms.txt` to match the real deployed URL.

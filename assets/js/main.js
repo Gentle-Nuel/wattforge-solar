@@ -21,7 +21,7 @@
     themeToggle.addEventListener('click', function () {
       var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', next);
-      try { localStorage.setItem('twinstech-theme', next); } catch (e) {}
+      try { localStorage.setItem('wattforge-theme', next); } catch (e) {}
       reflect(next);
     });
   }
@@ -73,7 +73,7 @@
      pricing lifted for this build; see index.html pricing-note). */
   var calculator = document.getElementById('calculator');
   if (calculator) {
-    var PHONE = calculator.getAttribute('data-phone') || '2348051355133';
+    var PHONE = calculator.getAttribute('data-phone') || '2349061418974';
 
     var LABELS = {
       fridge: 'Fridge',
@@ -134,7 +134,7 @@
         var summary = Object.keys(LABELS)
           .map(function (key) { return LABELS[key] + ' x' + counts[key]; })
           .join(', ');
-        var message = 'Hi Twinstech, I used your load calculator on the website.\n' +
+        var message = 'Hi Wattforge, I used your load calculator on the website.\n' +
           'My appliances: ' + summary + '.\n' +
           'Estimated load: ' + totalKw.toFixed(2) + 'kW.\n' +
           'Recommended system: ' + tier.name + '.\n' +

@@ -1,9 +1,9 @@
 /* ============================================================
-   Twinstech Solar — Study 03 "Verify"
+   Wattforge Solar — Study 03 "Verify"
    Built from scratch around one idea: the whole page is a single
    evidence document, not a stack of marketing sections. Charcoal/
    copper/porcelain system from Study 01. Self-hosted fonts,
-   mobile-first. Business facts only from twinstech-build-brief-main.md.
+   mobile-first. Portfolio build: fictionalized business, case studies and contact details.
    ============================================================ */
 
 @font-face{
@@ -342,7 +342,7 @@ h1,h2,.display{ font-family:'Big Shoulders Display', sans-serif; font-weight:900
 
 /* ---------------- hero: nameplate over full-bleed photo ---------------- */
 .hero{ position:relative; min-height:min(82vh, 680px); display:flex; align-items:flex-end; overflow:hidden; border-bottom:1px solid var(--line); }
-.hero-photo{ position:absolute; inset:0; background-image:url('../images/project-enugu.jpg'); background-size:cover; background-position:50% 62%; }
+.hero-photo{ position:absolute; inset:0; background-image:url('../images/project-nsukka.jpg'); background-size:cover; background-position:50% 62%; }
 /* On narrow/tall viewports the hero container becomes taller relative to
    its width than this photo's own 4:3 ratio, so `cover` stops cropping the
    vertical axis at all (it crops width instead) and the tree/grass/house
@@ -458,7 +458,7 @@ main section:last-of-type{ border-bottom:0; }
 @media (min-width:700px){ .evidence-grid{ grid-template-columns:repeat(3,1fr); } }
 
 
-/* ---------------- capability tags ("why Twinstech", no icon cards) ---------------- */
+/* ---------------- capability tags ("why Wattforge", no icon cards) ---------------- */
 .tag-row{ display:flex; flex-wrap:wrap; gap:10px; }
 .cap-tag{
   font-family:'IBM Plex Mono', monospace; font-size:0.82rem; letter-spacing:0.02em;

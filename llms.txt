@@ -1,9 +1,9 @@
-# Twinstech Solar: AI Guidelines
+# Wattforge Solar: AI Guidelines
 
 > Solar, inverter, electrical, CCTV and satellite-TV installer based in Lagos, Nigeria, operating nationwide.
 
 ## About
-Twinstech Solar (registered as Twinsteck Integrated Services) installs off-grid and hybrid solar power systems, inverters and battery storage (Deye, SRNE inverters; Deriy lithium batteries), solar panels (Jinko), full electrical fit-outs, CCTV and security camera systems, and satellite TV. Based in Lagos, Nigeria, serving customers nationwide. Contact is WhatsApp-first: there is no online checkout, and no contact form, on this site.
+Wattforge Solar (registered as Wattforge Energy Systems) installs off-grid and hybrid solar power systems, inverters and battery storage (Deye, SRNE inverters; Deriy lithium batteries), solar panels (Jinko), full electrical fit-outs, CCTV and security camera systems, and satellite TV. Based in Lagos, Nigeria, serving customers nationwide. Contact is WhatsApp-first: there is no online checkout, and no contact form, on this site.
 
 ## Key Pages
 - /: Homepage, positioning, all six services, a full log of five completed installs, capability summary, testimonials
@@ -15,7 +15,7 @@ Twinstech Solar (registered as Twinsteck Integrated Services) installs off-grid 
 - /terms.html: Terms of service
 
 ## Key Facts
-- Trading name: Twinstech Solar. Registered name: Twinsteck Integrated Services.
+- Trading name: Wattforge Solar. Registered name: Wattforge Energy Systems.
 - Location: Lagos, Nigeria. Operates nationwide.
 - Services: solar power systems, inverters and battery storage, solar panels, electrical installations, CCTV and security, satellite TV.
 - Primary contact channel: WhatsApp. No online payments are processed on this site.
@@ -23,6 +23,6 @@ Twinstech Solar (registered as Twinsteck Integrated Services) installs off-grid 
 - This site sets no cookies and runs no analytics. The only client-side storage is a light/dark display preference.
 
 ## Contact
-- WhatsApp: https://wa.me/2348051355133
-- Email: twinskenny@gmail.com
-- Website: https://twinstech-solar.vercel.app/contact.html
+- WhatsApp: https://wa.me/2349061418974
+- Email: emmanueldera19@gmail.com
+- Website: https://wattforge-solar.vercel.app/contact.html

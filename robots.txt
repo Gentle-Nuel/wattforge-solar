@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://twinstech-solar.vercel.app/sitemap.xml
+Sitemap: https://wattforge-solar.vercel.app/sitemap.xml
 Crawl-delay: 1
